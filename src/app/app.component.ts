@@ -61,6 +61,7 @@ export class AppComponent {
 
   enterRoom(id: string) {
     this.errorMessage = "";
+    this.messageLog = "";
     console.log(id);
     this.http.post(`https://localhost:7124/api/GameRoom/join?userId=${this.userId}&roomId=${id}`, {}).subscribe({
       next: () => {
@@ -73,7 +74,7 @@ export class AppComponent {
   }
 
   exitRoom() {
-    this.errorMessage = "";
+    this.messageLog = "";
     this.errorMessage = "";
     this.roomId = "";
     this.loadRooms();
